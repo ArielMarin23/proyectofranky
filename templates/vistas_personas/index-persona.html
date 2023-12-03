@@ -29,24 +29,26 @@
               <h6 class="m-0 font-weight-bold text-primary">Datos Personales</h6>
           </div>
           <div class="card-body">
-              <div>
-                  <label for="txtnombres" class="form-label">Nombres</label>
-                  <input type="text" class="form-control" id="txtnombres" placeholder="ingrese sus nombres">
-              </div>
-              <div >
-                  <label for="txtapellidos" class="form-label">Apellidos</label>
-                  <input type="text" class="form-control" id="txtapellidos" placeholder="ingrese sus nombres">
-              </div>
-              <div >
-                  <label for="txtci" class="form-label">Documento de Identidad</label>
-                  <input type="text" class="form-control" id="txtci" placeholder="ingrese sus nombres">
-              </div>
-              <div >
-                  <label for="txtdireccion" class="form-label">Direccion</label>
-                  <input type="text" class="form-control" id="txtdireccion" placeholder="ingrese sus nombres">
-              </div>
-              <button type="button" class="btn btn-primary" id="btncrear">Crear</button>
-              <button type="button" class="btn btn-secondary" id="btnlimpiar">Limpiar formulario</button>
+              <form action="">
+                <div class="input-group mb-3 ">
+                    <span class="input-group-text">Nombres</span>
+                    <input type="text" aria-label="Nombres" class=" form-control" id="txtnombres" placeholder="Ingrese sus nombres">
+                </div>
+                <div class="input-group mb-3 ">
+                  <span class="input-group-text">Apellidos</span>
+                    <input type="text"aria-label="Apellidos" class="form-control" id="txtapellidos" placeholder="ingrese sus apellidos">
+                </div>
+                <div class="input-group mb-3 " >
+                  <span class="input-group-text">Nro de Cedula</span>
+                    <input type="text"aria-label="CI" class="form-control" id="txtci" placeholder="Numero de Cedula">
+                </div>
+                <div  class="input-group mb-3 ">
+                  <span class="input-group-text">Direccion</span>
+                    <input type="text" aria-label="Direccion"class="form-control" id="txtdireccion" placeholder="Direccion">
+                </div>
+                <button type="button" class="btn btn-primary" id="btncrear">Crear</button>
+                <button type="button" class="btn btn-secondary" id="btnlimpiar">Limpiar formulario</button>
+              </form>
           </div>
       </div>
   </div>

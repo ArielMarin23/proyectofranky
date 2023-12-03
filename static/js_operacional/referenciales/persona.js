@@ -56,6 +56,11 @@ $(function(){
         try{
             const guardado = await axios.post('/save-persona', persona);
             console.log(guardado);
+            Swal.fire({
+                title: "Exitoso",
+                text: "Guardando Formulario",
+                icon: "success"
+            });
         } catch (error){
             console.error(error);
         }
