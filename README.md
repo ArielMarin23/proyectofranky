@@ -1,2 +1,2 @@
-# proyectofranky
-- Practicas para el proyecto Final
+# PROYECTO FRANKY
+ **Practicas para el proyecto Final**
