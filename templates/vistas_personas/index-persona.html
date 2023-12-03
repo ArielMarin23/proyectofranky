@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+
+
+{% block contenido_principal %}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Persona</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Hogar</a></li>
+          <li class="breadcrumb-item active">Persona</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+
+  <!-- Default box -->
+  <div class="card">
+  <div >
+      <div >
+          <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Datos Personales</h6>
+          </div>
+          <div class="card-body">
+              <div>
+                  <label for="txtnombres" class="form-label">Nombres</label>
+                  <input type="text" class="form-control" id="txtnombres" placeholder="ingrese sus nombres">
+              </div>
+              <div >
+                  <label for="txtapellidos" class="form-label">Apellidos</label>
+                  <input type="text" class="form-control" id="txtapellidos" placeholder="ingrese sus nombres">
+              </div>
+              <div >
+                  <label for="txtci" class="form-label">Documento de Identidad</label>
+                  <input type="text" class="form-control" id="txtci" placeholder="ingrese sus nombres">
+              </div>
+              <div >
+                  <label for="txtdireccion" class="form-label">Direccion</label>
+                  <input type="text" class="form-control" id="txtdireccion" placeholder="ingrese sus nombres">
+              </div>
+              <button type="button" class="btn btn-primary" id="btncrear">Crear</button>
+              <button type="button" class="btn btn-secondary" id="btnlimpiar">Limpiar formulario</button>
+          </div>
+      </div>
+  </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+
+</section>
+
+
+
+​        
+{% endblock %}
+
+{% block mi_javascript %}
+<script src="{{ url_for('static', filename='js_operacional/referenciales/persona.js') }}"></script>
+{% endblock %}
+
+
+

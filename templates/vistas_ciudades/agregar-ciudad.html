@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block contenido_principal %}
+<div class="modal-body">
+  <form action="{{ url_for('save_ciudad') }}" method="post">
+    <div class="card">
+      <div class="card-header">Agregar ciudad</div>
+      <div class="card-body">
+        <input type="text" name="txtciudad" class="form-control" required>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
+
