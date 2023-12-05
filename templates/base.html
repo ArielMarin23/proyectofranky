@@ -15,7 +15,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{url_for('static', filename='dist/css/adminlte.min.css')}}">
   <!-- datatables -->
-  <link rel="stylesheet" href="{{url_for('static', filename='plugins/datablesNuevo/DataTables/css/dataTables.bootstrap5.min.css'')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='plugins/datatablesNuevo/DataTables-1.13.8/css/dataTables.bootstrap5.min.css')}}">
   
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
@@ -872,12 +872,11 @@
 <!-- Custom scripts for all pages-->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-<script src="{{ url_for('static', filename='plugins/datatableNuevo/DataTables/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/datatablesNuevo/DataTables-1.13.8/js/jquery.dataTables.min.js') }}"></script>
 
-    <script src="{{ url_for('static', filename='plugins/datatableNuevo/DataTables/js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/datatablesNuevo/DataTables-1.13.8/js/dataTables.bootstrap5.min.js') }}"></script>
 
-<script src="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
 {% block mi_javascript %}
 {% endblock %}
 </body>
