@@ -11,17 +11,45 @@ def index():
     return  render_template('base.html')
 
 @app.route('/index-persona')
+#Formulario Persona
 def index_persona():
     return render_template('vistas_personas/index-persona.html')
 #Operadores rest[GET, POST, PUT, PATCH, DELETE]
+@app.route('/get-personas')
+def get_personas():
+    pers = PersonaDao()
+    lista = pers.getPersonas()
+    return jsonify(lista)
+
 @app.route('/save-persona', methods=['POST'])
 def save_persona():
-    print(request.json['nombres'])
-    return jsonify({
-        'mensaje': 'Se recibio correctamente el json del navegador',
-        'objeto_recibo': request.json
-    })
+    nombres = request.json['nombres']
+    apellidos = request.json['apellidos']
+    cedula = request.json['cedula']
+    direccion = request.json['direccion']
+    guardado = False
 
+    if len(nombres.strip()) > 0 and len(apellidos.strip()) > 0 and len(cedula.stip()) > 0:
+        pers = PersonaDao()
+        guardado = pers.insertPersona(nombres.strip.upper(), apellidos.strip().upper(), cedula.strip(), direccion.stip())
+        if guardado:
+            return jsonify({
+                'succes': 'Se guardo el registro',
+                'error': None
+            })
+        else:
+            return jsonify({
+              'succes':None,
+              'error': 'No se pudo guardar el registro'  
+            })
+    else:
+        return jsonify({
+            'success': None,
+            'error': 'No se envio correctamente el post'
+        })
+
+
+#Formulario Ciudad
 @app.route('/index-ciudad')
 def index_ciudad():
     cdao = CiudadDao()
