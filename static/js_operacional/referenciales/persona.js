@@ -1,7 +1,26 @@
-$(function(){
+$(async function(){
     //Zona segura de ejecucion
-    console.log("hola, estoy en el formulario persona");
-    //tener en cuenta agregar async a la funcion cuando usamos axios
+    try {
+        const personas = await axios.get('/get-personas');
+        console.log(personas);
+        lista_personas = personas.data;
+        let cadena = '';
+        for (const item of lista_personas){
+            cadena += `
+            <tr>
+                <th scope="row">${item.id}</th>
+                <td>${item.nombres}</td>
+                <td>${item.apellidos}</td>
+                <td>${item.ci}</td>
+                <td></td>
+            </tr>
+            `;
+        }
+        $('#tbl tbody').html(cadena);
+    }catch (error) {
+        console.error(error);
+    }
+
     $('#btncrear').on('click', async function(){
         //recuperar los datos del formulario
         const nombres = $('#txtnombres').val();
