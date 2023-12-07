@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 from referenciales.ciudad.ciudadDao import CiudadDao
-
+from referenciales.persona.personaDao import PersonaDao
 app = Flask(__name__)
 
 @app.context_processor
@@ -30,6 +30,7 @@ def save_persona():
     guardado = False
 
     if len(nombres.strip()) > 0 and len(apellidos.strip()) > 0 and len(cedula.stip()) > 0:
+        #Se llama a la clase dentro de modelo personaDao.py
         pers = PersonaDao()
         guardado = pers.insertPersona(nombres.strip.upper(), apellidos.strip().upper(), cedula.strip(), direccion.stip())
         if guardado:
