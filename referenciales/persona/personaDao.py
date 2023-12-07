@@ -3,7 +3,7 @@ from conexion.Conexion import Conexion
 class PersonaDao:
     def getPersonas(self):
         personaSQL = """
-            SELECT id, nombres, apellidos, ci, direccion FROM public.personas
+            SELECT id, nombres, apellidos, ci, direccion FROM personas
         """
         lista = []
         conexion = Conexion()
@@ -30,7 +30,7 @@ class PersonaDao:
     
     def getPersonaByid(self, id):
         personaSQL = """
-            SELECT id, nombres, apellidos, ci, direccion FROM public.personas
+            SELECT id, nombres, apellidos, ci, direccion FROM personas
             WHERE id = %s
         """
         conexion = Conexion()
@@ -56,7 +56,7 @@ class PersonaDao:
     
     def insertPersona(self, nombres, apellidos, ci, direccion):
         insertSQL = """
-            INSERT INTO public.personas(nombres, apellidos, ci, direccion)
+            INSERT INTO personas(nombres, apellidos, ci, direccion)
 	        VALUES (%s, %s, %s, %s)
         """
         conexion = Conexion()
@@ -74,7 +74,7 @@ class PersonaDao:
         return False
     def updatePersona(self, id, nombres,apellidos, ci, direccion):
         updateSQL = """
-            UPDATE public.personas
+            UPDATE personas
 	        SET nombres=%s, apellidos=%s, ci=%s, direccion=%s
 	        WHERE id=%s;
         """

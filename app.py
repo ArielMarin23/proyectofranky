@@ -29,10 +29,10 @@ def save_persona():
     direccion = request.json['direccion']
     guardado = False
 
-    if len(nombres.strip()) > 0 and len(apellidos.strip()) > 0 and len(cedula.stip()) > 0:
+    if len(nombres.strip()) > 0 and len(apellidos.strip()) > 0 and len(cedula.strip()) > 0:
         #Se llama a la clase dentro de modelo personaDao.py
         pers = PersonaDao()
-        guardado = pers.insertPersona(nombres.strip.upper(), apellidos.strip().upper(), cedula.strip(), direccion.stip())
+        guardado = pers.insertPersona(nombres.strip().upper(), apellidos.strip().upper(), cedula.strip(), direccion.strip())
         if guardado:
             return jsonify({
                 'succes': 'Se guardo el registro',

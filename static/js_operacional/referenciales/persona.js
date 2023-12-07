@@ -72,16 +72,17 @@ $(async function(){
             direccion: direccion
         }
         console.log(persona);
-        try{
+        try {
             const guardado = await axios.post('/save-persona', persona);
             console.log(guardado);
+        } catch (error) {
+            console.error(error);
+        }
+        /*
             Swal.fire({
                 title: "Exitoso",
                 text: "Guardando Formulario",
                 icon: "success"
-            });
-        } catch (error){
-            console.error(error);
-        }
-    });
+                */
+     });
 });
