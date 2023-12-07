@@ -53,4 +53,60 @@ class PersonaDao:
         finally:
             cur.close()
             con.close()
-            
+    
+    def insertPersona(self, nombres, apellidos, ci, direccion):
+        insertSQL = """
+            INSERT INTO public.personas(nombres, apellidos, ci, direccion)
+	        VALUES (%s, %s, %s, %s)
+        """
+        conexion = Conexion()
+        con = conexion.getConexion()
+        cur = con.cursor()
+        try:
+            cur.execute(insertSQL(nombres, apellidos, ci, direccion,))
+            con.commit()
+            return True
+        except con.Error as e:
+            print(f"pgcode = {e.pgcode}, mensaje = {e.pgerror}")
+        finally:
+            cur.close()
+            con.close()
+        return False
+    def updatePersona(self, id, nombres,apellidos, ci, direccion):
+        updateSQL = """
+            UPDATE public.personas
+	        SET nombres=%s, apellidos=%s, ci=%s, direccion=%s
+	        WHERE id=%s;
+        """
+        conexion = Conexion()
+        con = conexion.getConexion()
+        cur = con.cursor()
+        try:
+            cur.execute(updateSQL,(nombres, apellidos, ci, direccion,))
+            con.commit()
+            return True
+        except con.Error as e:
+            print(f"pgcode = {e.pgcode}, mensaje = {e.pgerror}")
+        finally:
+            cur.close()
+            con.close()
+        return False
+    
+    def deletePersona(self, id):
+        deleteSQL = """
+            DELETE FROM personas WHERE id = %s
+        """
+        conexion = Conexion()
+        con = conexion.getConexion()
+        cur = con.cursor()
+        try:
+            cur.execute(deleteSQL, (id,))
+            con.commit()
+            return True
+        except con.Error as e:
+            print(f"pgcode = {e.pgcode}, mensaje = {e.pgcode}")
+        finally:
+            cur.close()
+            con.close()
+        return False
+     
