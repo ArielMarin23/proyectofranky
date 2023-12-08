@@ -7,7 +7,7 @@ class PersonaDao:
         """
         lista = []
         conexion = Conexion()
-        con = conexion.getConexion
+        con = conexion.getConexion()
         cur = con.cursor()
         try:
             cur.execute(personaSQL)
