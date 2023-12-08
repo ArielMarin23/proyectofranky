@@ -63,7 +63,7 @@ class PersonaDao:
         con = conexion.getConexion()
         cur = con.cursor()
         try:
-            cur.execute(insertSQL(nombres, apellidos, ci, direccion,))
+            cur.execute(insertSQL, (nombres, apellidos, ci, direccion,))
             con.commit()
             return True
         except con.Error as e:
